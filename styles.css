@@ -1,0 +1,244 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f4f4f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    padding-top: 50px;
+    background-image: url('fondo.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover; /* Para que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Fija la imagen de fondo al viewport */
+  }
+  
+  /* Card Style for Login and Enrollment */
+  .login-card{
+    background-color: #fff;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-top: 160px; /* Ajusta este valor según necesites */
+  }
+  .enrollment-card {
+    background-color: #fff;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+
+  }
+  #sect {
+    padding-top: 20px; /* Ajusta el valor según el espacio que necesites */
+  }
+  h2 {
+    text-align: center;
+    color: #646363;
+    margin-bottom: 20px;
+    font-style: italic; /* Cursiva */
+    font-weight: bold;  /* Negrita */
+  }
+  h1, #sect1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-style: italic; /* Cursiva */
+    font-weight: bold;  /* Negrita */
+  }
+
+  
+  h3 {
+    text-align: center;
+    color: rgb(132, 132, 240); /* Color azul para h3 */
+    margin-bottom: 20px;
+    font-style: italic; /* Cursiva */
+    font-weight: bold;  /* Negrita */
+}
+  /* Form Styles */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input, select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  input[type="file"] {
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  /* Estilo para el botón de cierre de sesión */
+  #logout-btn {
+    background-color: rgb(253, 174, 174);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 2px; /* Espacio entre los botones */
+    }
+
+    /* Estilo para el hover en el botón */
+    #logout-btn:hover {
+        background-color: darkred;
+    }
+
+    
+    /* Estilo para todos los botones */
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Separate Section for Login */
+  .login-card {
+    margin-bottom: 40px; /* Margin to separate login from enrollment card */
+  }
+  
+  .login-card h2 {
+    margin-bottom: 15px;
+  }
+  .labor-item {
+    margin-bottom: 20px;
+}
+
+#add-labor-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#add-labor-btn:hover {
+    background-color: #0056b3;
+}
+
+.file-upload-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.file-upload-label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.required {
+    color: red;
+}
+
+.file-upload-box {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+.file-upload-box:hover {
+    border-color: #007bff;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-icon {
+    width: 40px;
+    margin-bottom: 10px;
+}
+
+.file-upload-content p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.file-upload-content small {
+    font-size: 14px;
+    color: #666;
+}
+
+.file-preview img {
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+  
+/* Flexbox para diseño adaptable */
+
+  
+/* Media queries para pantallas más pequeñas */
+@media (max-width: 768px) {
+    body {
+      
+      flex: 1 1 60%;  /* Los elementos ocupan todo el ancho en pantallas más pequeñas */
+      padding: 50px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body {
+      flex: 1 1 80%;  /* También ocupa el ancho completo en pantallas más pequeñas */
+      padding: 30px;
+    }
+  }
+
+
+  
