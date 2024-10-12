@@ -753,8 +753,9 @@
                     <!-- Campo de Labor y Fecha dinámico que se puede duplicar -->
                     <div class="labor-item">
                         <label for="labor">Labor</label>
-                        <select name="Labor" required>
+                        <select name="Labor">
                             <option value="" disabled selected>Selecciona una labor</option>
+                            <option value="">No selección</option>
                             <option value="Casilleros">Casilleros</option>
                             <option value="Video">Video</option>
                             <option value="Enfermería">Enfermería</option>
@@ -771,7 +772,7 @@
                         </select>
 
                         <label for="labor-start-date">Fecha en que inició la labor</label>
-                        <input type="month" name="Fecha en que inició la labor" required>
+                        <input type="month" name="Fecha en que inició la labor">
                     </div>
                 </div>
 
