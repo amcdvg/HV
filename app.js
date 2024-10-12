@@ -76,33 +76,52 @@ function addLaborItem() {
     const newLaborItem = document.createElement('div');
     newLaborItem.classList.add('labor-item');
 
-    // HTML para los nuevos campos de labor y fecha
+    // HTML para los nuevos campos de labor, fecha, y el ícono X para eliminar
     newLaborItem.innerHTML = `
-        <label for="labor">Labor</label>
-        <select name="Labor" required>
-            <option value="" disabled selected>Selecciona una labor</option>
-            <option value="Casilleros">Casilleros</option>
-            <option value="Video">Video</option>
-            <option value="Enfermería">Enfermería</option>
-            <option value="Acomodación">Acomodación</option>
-            <option value="Ofrenda">Ofrenda</option>
-            <option value="Biblias">Biblias</option>
-            <option value="Llaves de la iglesia">Llaves de la iglesia</option>
-            <option value="Aseo">Aseo</option>
-            <option value="Logística (vigilancia)">Logística (vigilancia)</option>
-            <option value="Sonido">Sonido</option>
-            <option value="Baños">Baños</option>
-            <option value="Protocolo de matrimonios">Protocolo de matrimonios</option>
-            <option value="Interpretación (LDS o Idiomas)">Interpretación (LDS o Idiomas)</option>
-        </select>
+        <div style="position: relative; padding-top: 20px;">
+            <span class="remove-labor-item" style="
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                cursor: pointer;
+                color: red;
+                font-weight: bold;
+                font-size: 24px; /* Tamaño más grande */
+                padding: 5px; /* Un poco de espacio alrededor */
+            ">&times;</span>
 
-        <label for="labor-start-date">Fecha en que inició la labor</label>
-        <input type="month" name="Fecha en que inició la labor" required>
+            <label for="labor">Labor</label>
+            <select name="Labor" required>
+                <option value="" disabled selected>Selecciona una labor</option>
+                <option value="Casilleros">Casilleros</option>
+                <option value="Video">Video</option>
+                <option value="Enfermería">Enfermería</option>
+                <option value="Acomodación">Acomodación</option>
+                <option value="Ofrenda">Ofrenda</option>
+                <option value="Biblias">Biblias</option>
+                <option value="Llaves de la iglesia">Llaves de la iglesia</option>
+                <option value="Aseo">Aseo</option>
+                <option value="Logística (vigilancia)">Logística (vigilancia)</option>
+                <option value="Sonido">Sonido</option>
+                <option value="Baños">Baños</option>
+                <option value="Protocolo de matrimonios">Protocolo de matrimonios</option>
+                <option value="Interpretación (LDS o Idiomas)">Interpretación (LDS o Idiomas)</option>
+            </select>
+
+            <label for="labor-start-date">Fecha en que inició la labor</label>
+            <input type="month" name="Fecha en que inició la labor" required>
+        </div>
     `;
 
     // Añadir el nuevo div al contenedor de labores
     container.appendChild(newLaborItem);
+
+    // Añadir evento para eliminar el div al hacer clic en la "X"
+    newLaborItem.querySelector('.remove-labor-item').addEventListener('click', function() {
+        container.removeChild(newLaborItem);
+    });
 }
+
 
 function clearLaborItems() {
     const container = document.getElementById('labor-material-container');
