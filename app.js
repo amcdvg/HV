@@ -250,11 +250,11 @@ form.addEventListener('submit', function(event) {
     let scriptURL
     // ------- upload file --------//
     if(formData1['Horario de Congregación Actual'] === "7:00 am"){
-        scriptURL = 'https://script.google.com/macros/s/AKfycbzuu888WEyzuEI4YspA3TChJu8TjI7ddezLbOa7cHwdNM7KJ3pyR8AR_4dR5ng3GjlH4A/exec';
+        scriptURL = 'https://script.google.com/macros/s/AKfycbzh3izmLfCGIiGenIHCSuNwkQk9WFWaxgmXdonOzLgGr1j4mbIiWXo6-dCKMH1uP6Vj/exec';
     }else if(formData1['Horario de Congregación Actual']==="5:00 pm"){
-        scriptURL = 'https://script.google.com/macros/s/AKfycbxGhysinAOOvFhjYEgrIavHb8Erc5rTToRlyXUruKizrVTDdn31V50YcUNSMGW_Ytg/exec';
+        scriptURL = 'https://script.google.com/macros/s/AKfycby9Af3G7B-XERIztEE2CS9fcI6a6scZL_Xh_yYu3y6c89E87l7rp7bBsQVc23tobPGhmQ/exec';
     }else{
-        scriptURL = 'https://script.google.com/macros/s/AKfycbxljTFB-DsHGxtCvJJnpf9WEFxYToQ4QWDw0es7_FriK3-mVN09jsEdtAq5qixXLkponw/exec';
+        scriptURL = 'https://script.google.com/macros/s/AKfycbw8ZleHKb3HeEXMVp4TsbxuS3RtqYTqDHKXPiqetNVAK1jQumANVrpUAK2cyVeFQ2_y9Q/exec';
     }
     const file = form.file.files[0];
     const fr = new FileReader();
@@ -265,11 +265,11 @@ form.addEventListener('submit', function(event) {
     fr.onload = (f) => {
         let url 
         if(formData1['Horario de Congregación Actual'] === "7:00 am"){
-            url  = 'https://script.google.com/macros/s/AKfycbzuu888WEyzuEI4YspA3TChJu8TjI7ddezLbOa7cHwdNM7KJ3pyR8AR_4dR5ng3GjlH4A/exec';
+            url  = 'https://script.google.com/macros/s/AKfycbzh3izmLfCGIiGenIHCSuNwkQk9WFWaxgmXdonOzLgGr1j4mbIiWXo6-dCKMH1uP6Vj/exec';
         }else if(formData1['Horario de Congregación Actual']==="5:00 pm"){
-            url  = 'https://script.google.com/macros/s/AKfycbxGhysinAOOvFhjYEgrIavHb8Erc5rTToRlyXUruKizrVTDdn31V50YcUNSMGW_Ytg/exec';
+            url  = 'https://script.google.com/macros/s/AKfycby9Af3G7B-XERIztEE2CS9fcI6a6scZL_Xh_yYu3y6c89E87l7rp7bBsQVc23tobPGhmQ/exec';
         }else{
-            url  = 'https://script.google.com/macros/s/AKfycbxljTFB-DsHGxtCvJJnpf9WEFxYToQ4QWDw0es7_FriK3-mVN09jsEdtAq5qixXLkponw/exec';
+            url  = 'https://script.google.com/macros/s/AKfycbw8ZleHKb3HeEXMVp4TsbxuS3RtqYTqDHKXPiqetNVAK1jQumANVrpUAK2cyVeFQ2_y9Q/exec';
         }
       //const url = "https://script.google.com/macros/s/AKfycbwwxn8mFGNehoTVVL5YWutPjLLBC5UGFYJDPx0TbpfSr71qlqC5WaJwIplHxTNhMhM/exec"; // Please set the URL of Web Apps.
 
