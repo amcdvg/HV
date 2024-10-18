@@ -273,7 +273,20 @@ form.addEventListener('submit', function(event) {
     
         // Validación personalizada
         if (baptismHolySpirit === "No" && laborFieldsEmpty) {
-            alert("Los datos no corresponden a un servidor, revisa el campo ¿Tiene el bautismo con el Espíritu Santo? o labores materiales.");
+            alert1 = confirm("Los datos no corresponden a un servidor, ¿quieres revisar el campo ¿Tiene el bautismo con el Espíritu Santo? o labores materiales?")
+
+            if (alert1) {
+                // Si el usuario hace clic en "Aceptar" (equivalente a "Revisar")
+                console.log("Revisar");
+            } else {
+                // Si el usuario hace clic en "Cancelar" (equivalente a "No Revisar")
+                form.reset();  // Limpia todos los campos del formulario
+                previewImg.src = "#";  // Restablece la imagen a un valor predeterminado
+                filePreview.style.display = "none";  // Oculta la vista previa de la imagen
+                fileUploadContent.style.display = "block";  // Muestra la sección de subida de archivo
+                enrollmentCard.style.display = 'block';  // Muestra nuevamente la tarjeta de inscripción (u otro contenido)
+                clearLaborItems();
+            }
             return; // Detener el envío del formulario
         }
     
