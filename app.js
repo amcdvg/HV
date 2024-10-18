@@ -229,9 +229,8 @@ fileInput.addEventListener('change', previewImage);
                 }
             }
         }
-    }
-*/
-    form.addEventListener('submit', function(event) {
+    }*/
+form.addEventListener('submit', function(event) {
         event.preventDefault();  // Evita el envío normal del formulario
         
         const formData1 = {};
@@ -273,7 +272,7 @@ fileInput.addEventListener('change', previewImage);
         }
     
         // Validación personalizada
-        if (baptismHolySpirit === "No" || laborFieldsEmpty) {
+        if (baptismHolySpirit === "No" && laborFieldsEmpty) {
             alert("Los datos no corresponden a un servidor, revisa el campo ¿Tiene el bautismo con el Espíritu Santo? o labores materiales.");
             return; // Detener el envío del formulario
         }
@@ -283,7 +282,7 @@ fileInput.addEventListener('change', previewImage);
         console.log(labors);
     
         // Enviar el formulario o realizar una acción adicional si pasa la validación
-    });
+
     
 
     // Ahora, asignamos las labores y las fechas con los números correspondientes
