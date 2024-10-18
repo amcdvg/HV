@@ -199,7 +199,7 @@ fileInput.addEventListener('change', previewImage);
 
 
 // Manejador para el envío del formulario
-form.addEventListener('submit', function(event) {
+/*form.addEventListener('submit', function(event) {
     event.preventDefault();  // Evita el envío normal del formulario
     const formData1 = {};
     const labors = []; // Arreglo para almacenar las labores y sus fechas
@@ -230,6 +230,61 @@ form.addEventListener('submit', function(event) {
             }
         }
     }
+*/
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();  // Evita el envío normal del formulario
+        
+        const formData1 = {};
+        const labors = []; // Arreglo para almacenar las labores y sus fechas
+        
+        let baptismHolySpirit = document.getElementById('baptism-holy-spirit').value;
+        let laborFieldsEmpty = false;
+        
+        // Verificar si alguna labor ha sido seleccionada
+        let laborItems = document.querySelectorAll('#labor-material-container .labor-item select[name="Labor"]');
+        laborItems.forEach(laborField => {
+            if (laborField.value === "") {
+                laborFieldsEmpty = true;
+            }
+        });
+        
+        // Recorrer todos los elementos del formulario y construir formData1
+        for (let field of form.elements) {
+            if (field.name) {
+                if (field.name.endsWith('[]')) {
+                    const baseName = field.name.slice(0, -2); // Eliminar los corchetes '[]'
+                    if (!formData1[baseName]) {
+                        formData1[baseName] = [];
+                    }
+                    formData1[baseName].push(field.value);
+                } else {
+                    formData1[field.name] = field.value;
+                }
+                
+                // Procesar las labores y sus fechas
+                if (field.name.includes('Labor')) {
+                    labors.push({ labor: field.value, fecha: '' });
+                } else if (field.name.includes('Fecha en que inició la labor')) {
+                    if (labors.length > 0) {
+                        labors[labors.length - 1].fecha = field.value;
+                    }
+                }
+            }
+        }
+    
+        // Validación personalizada
+        if (baptismHolySpirit === "No" || laborFieldsEmpty) {
+            alert("Los datos no corresponden a un servidor, revisa el campo ¿Tiene el bautismo con el Espíritu Santo? o labores materiales.");
+            return; // Detener el envío del formulario
+        }
+    
+        // Si pasa la validación, aquí se pueden continuar los procesos adicionales del formulario
+        console.log(formData1);
+        console.log(labors);
+    
+        // Enviar el formulario o realizar una acción adicional si pasa la validación
+    });
+    
 
     // Ahora, asignamos las labores y las fechas con los números correspondientes
     for (let i = 0; i < 13; i++) {
